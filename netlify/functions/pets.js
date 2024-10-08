@@ -1,6 +1,6 @@
 const handler = async () => {
   return {
-    stutusCode: 200,
+    statusCode: 200,
     headers: {
       'Content-Type': 'text/plain',
     },
