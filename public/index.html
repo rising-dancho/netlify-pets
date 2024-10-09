@@ -1,11 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pet Adoption</title>
+  <title>Pet Adoption || Reviewing CSS Fundamentals</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./review.css">
+  <script src="review.js" defer></script>
+  <script src="index.js" defer></script>
 </head>
+
 <body>
-  <h1>Out site will appear her very soon</h1>
+
+
+  <section class="top bg-dark">
+
+    <div class="hero-section relative-max-width padding-md center bg-dark ">
+      <!-- embelishment circle -->
+      <div class="circle blue-circle" aria-hidden="true"></div>
+      <!-- <img src="./images/Ellipse_blue.svg" alt="decorative ellipse" aria-hidden="true"> -->
+
+      <!-- embelishment circle -->
+      <div class="circle pink-circle" aria-hidden="true"></div>
+
+      <div class="left">
+        <h1>Find Your New Bestie</h1>
+        <p>The most amazing list of adoptable pets at your fingertips. Updated fresh daily.
+          <p />
+        <div class="btn-container">
+          <a href="#view-pets-btn" class="btn btn-primary">View Pets</a>
+          <a href="#" class="btn btn-outline">Manage Pets</a>
+        </div>
+      </div>
+      <div class="right">
+        <marquee behavior="scroll" direction="left" scrolldelay="18" scrollamount="10" class="marquee">
+          <h5 id="greeting"></h5>
+          <div>
+        </marquee>
+
+        <div class="center-container">
+          <input id="marquee-field" type="text" placeholder="Enter your name" class="input-field-design">
+
+          <button id="marquee-btn" class="btn btn-primary randomizer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill"
+              viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314" />
+            </svg>
+          </button>
+          <p id="message"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="call-out-section max-width padding-md center">
+
+      <div class="card">
+        <img src="./images/sun-icon.svg" alt="sun icon">
+        <div class="intro-features">
+          <h4>Sunny Play</h4>
+          <p>Our center is located in the beautiful San Mateo, Rizal, Philippines, and it’s currently <span
+              id="if-error"> <span id="weather-temp"></span> with <span id="weather-condition"></span> weather <span
+                id="weather-anchor"><img id="weather-icon" alt="icon"> at</span> our pet playground.</span></p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="./images/emoji.svg" alt="emoji icon">
+        <div class="intro-features">
+          <h4>Dedicated Staff</h4>
+          <p>Our center has over 70 volunteers who play with the pets four times daily.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="./images/trophy.svg" alt="trophy icon">
+        <div class="intro-features">
+          <h4>Voted #1</h4>
+          <p>For the last five years we’ve consistently been voted the #1 pet adoption center in the state.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="./images/moon.svg" alt="moon icon">
+        <div class="intro-features">
+          <h4>Nightly</h4>
+          <p>Every night our staff leads a yoga session and the animals are free to roam around and relax around people.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <main class="middle">
+    <div class="pets-section max-width padding-lg center">
+      <h2 id="view-pets-btn">Meet Our Friends</h2>
+      <div class="filter-container">
+        <p>Show me:</p>
+        <div class="filter-buttons-wrapper">
+          <button class="active" data-filter="all">All Pets</button></li>
+          <button data-filter="dog">Only Dogs</button></li>
+          <button data-filter="cat">Only Cats</button></li>
+        </div>
+      </div>
+
+      <div class="pet-cards-container"></div>
+
+      <template id="pet-card-template">
+        <div class="pet-card">
+          <div class="pet-details-container">
+            <h3></h3>
+            <p class="pet-description"></p>
+            <span class="pet-age"></span>
+          </div>
+          <div class="pet-card-photo">
+            <img src="./images/fallback.jpg" alt="a pet bestie">
+          </div>
+        </div>
+      </template>
+
+    </div>
+  </main>
+
+  <footer class="bottom">
+    <div class="footer-section max-width padding-sm center">
+      <p id="copyright"> </p>
+    </div>
+  </footer>
+
 </body>
+
 </html>
