@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Adoption || Reviewing CSS Fundamentals</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../review.css">
+</head>
+
+<body>
+
+  <main class="middle">
+    <div class="pets-section max-width padding-lg center">
+      <h2>Meet Our Friends</h2>
+      <p>If you are logged in, show the pets to manage here, however, if you are not logged in, redirect the user to a
+        login form page.</p>
+    </div>
+  </main>
+
+  <footer class="bottom">
+    <div class="footer-section max-width padding-sm center">
+      <p id="copyright"> </p>
+    </div>
+  </footer>
+
+</body>
+<script>
+  // auto update year:
+  const current_year = new Date().getFullYear();
+  const footer_text = `&copy; ${current_year} Faux Adoption Center. All rights reserved.`;
+
+  document.getElementById('copyright').innerHTML = footer_text;
+</script>
+
+</html>

@@ -11,7 +11,7 @@ const handler = async () => {
     statusCode: 200,
     headers: {
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*', //Allow any external website to Acess the API Route
+      'Access-Control-Allow-Origin': '*', //Allow any external website to Acess the Backend API Route
     },
     body: JSON.stringify(pets),
   };
