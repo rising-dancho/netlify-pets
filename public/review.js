@@ -44,14 +44,16 @@ marquee_btn.addEventListener('click', function () {
         return (greeting.textContent =
           'ERROR: Huh?! Did you enter [your name]??! 🤔');
       }
-      greeting.textContent = `Hello, ${user_input}! Welcome to Find Your Bestie! Yeasss!! 💅💅`;
+      greeting.textContent = `Hello, ${capitalizeInitials(
+        user_input
+      )}! Welcome to Find Your Bestie! Yeasss!! 💅💅`;
       break;
     case 2:
       // regenerate an updated date and time
       const now = new Date(); // Get the current date and time
       const options = {
         year: 'numeric',
-        month: 'long', 
+        month: 'long',
         day: 'numeric',
         hour: '2-digit',
         minute: '2-digit',
@@ -67,6 +69,13 @@ marquee_btn.addEventListener('click', function () {
         'Error: Whoops! didnt see that coming.. some unknown error occured.';
   }
 });
+
+function capitalizeInitials(text) {
+  return text
+    .split(' ') // Split the text into an array of words
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()) // Capitalize first letter, make rest lowercase
+    .join(' '); // Join the words back into a single string
+}
 
 // auto update year:
 const current_year = new Date().getFullYear();
