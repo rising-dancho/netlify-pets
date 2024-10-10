@@ -7,7 +7,7 @@ const if_error = document.querySelector('#if-error');
 async function weather() {
   try {
     const weatherPromise = await fetch(
-      'https://api.weatherapi.com/v1/current.json?key=0646a2235f34450f91e174616240410&q=14.682413578492366,121.12798895707499'
+      'https://weather-pets-adoption-see6.vercel.app/weather'
     );
     const weatherData = await weatherPromise.json();
 

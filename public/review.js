@@ -27,7 +27,7 @@ marquee_btn.addEventListener('click', function () {
   let randomNumber;
 
   do {
-    randomNumber = Math.floor(Math.random() * 3) + 1;
+    randomNumber = Math.floor(Math.random() * 2) + 1;
   } while (randomNumber === lastRandomNumber); // Ensure the new number is not the same as the last one
 
   lastRandomNumber = randomNumber; // Update the last random number
@@ -35,23 +35,23 @@ marquee_btn.addEventListener('click', function () {
   const user_input = marquee_field.value;
 
   switch (randomNumber) {
+    // case 1:
+    //   greeting.textContent =
+    //     'SPONSOR: "This portion is brought to you by Jabolin Spicy.. Mas mesherep kapag may red flag 🥵🥵🥵"';
+    //   break;
     case 1:
-      greeting.textContent =
-        'SPONSOR: "This portion is brought to you by Jabolin Spicy.. Mas mesherep kapag may red flag 🥵🥵🥵"';
-      break;
-    case 2:
       if (user_input === '') {
         return (greeting.textContent =
           'ERROR: Huh?! Did you enter [your name]??! 🤔');
       }
       greeting.textContent = `Hello, ${user_input}! Welcome to Find Your Bestie! Yeasss!! 💅💅`;
       break;
-    case 3:
+    case 2:
       // regenerate an updated date and time
       const now = new Date(); // Get the current date and time
       const options = {
         year: 'numeric',
-        month: 'long',
+        month: 'long', 
         day: 'numeric',
         hour: '2-digit',
         minute: '2-digit',
