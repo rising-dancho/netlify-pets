@@ -5,10 +5,22 @@ const handler = async (event) => {
 
   const body = JSON.parse(event.body || '');
   if (body.username === 'learn' && body.password === 'javascript') {
+    const myCookie = cookie.serialize(
+      'petAdoption',
+      'asdasdasdasdEADFACDASDASdasd!13224324sd',
+      {
+        httpOnly: true,
+        path: '/',
+        sameSite: 'strict',
+        maxAge: 60 * 60 * 24,
+      } // maxAge: 1 min, 1 hour, 1 day
+    ); // arguments: label, value, configuration object {}
     return {
       statusCode: 200,
       headers: {
         'Content-Type': 'application/json',
+        'Set-Cookie': myCookie,
+        Location: '/',
       },
       body: JSON.stringify({ success: true }),
     };
