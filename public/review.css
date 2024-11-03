@@ -521,6 +521,10 @@ footer p {
   color: var(--gray-text-dimmed);
 }
 
+footer button#logout {
+  margin-bottom: var(--spacing-48px);
+}
+
 /* /* ------------------------ */
 /* BELOW 1250px (Desktops)              */
 /* --------------------------- */

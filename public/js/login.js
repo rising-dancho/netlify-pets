@@ -19,9 +19,13 @@ async function handleSubmit(e) {
   const ourData = await ourPromise.json();
 
   // redirect if successful login
-  if (ourData.success) {
+  if (ourData.success == true) {
     window.location = '/admin';
   } else {
-    alert('Attention: wrong username/password');
+    alert(
+      'Attention: wrong username/password. For testing: username is learn. password is javascript'
+    );
   }
 }
+
+// explanation to whats happening: https://chatgpt.com/share/6727a367-a4a4-8000-ac7d-865fc92a756d

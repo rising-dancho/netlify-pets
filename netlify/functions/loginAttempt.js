@@ -36,3 +36,5 @@ const handler = async (event) => {
 };
 
 module.exports = { handler };
+
+// explanation to whats happening: https://chatgpt.com/share/6727a367-a4a4-8000-ac7d-865fc92a756d
