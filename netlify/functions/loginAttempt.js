@@ -6,7 +6,7 @@ const handler = async (event) => {
   const body = JSON.parse(event.body || '');
   if (body.username === 'learn' && body.password === 'javascript') {
     const myCookie = cookie.serialize(
-      'petAdoption',
+      'petadoption',
       'asdasdasdasdEADFACDASDASdasd!13224324sd',
       {
         httpOnly: true,
