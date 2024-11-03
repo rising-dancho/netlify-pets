@@ -19,7 +19,7 @@ async function handleSubmit(e) {
   const ourData = await ourPromise.json();
 
   // redirect if successful login
-  if (ourData.success === 'true') {
+  if (ourData.success) {
     window.location = '/admin';
   } else {
     alert('Attention: wrong username/password');
