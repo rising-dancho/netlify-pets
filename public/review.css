@@ -564,7 +564,7 @@ p {
   padding: var(--spacing-12px) var(--spacing-32px) !important;
   margin: 0 0 var(--spacing-32px) 0;
   font-size: var(--fs-20);
-  border-radius: var(--br-card);
+  border-radius: var(--br-button);
   color: var(--white-text);
   background-color: var(--secondary-color-green);
   font-family: inherit;
