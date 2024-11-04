@@ -546,6 +546,11 @@ p {
   color: var(--accent-color);
 }
 
+.action-btn:hover {
+  text-decoration: underline;
+  color: var(--accent-color-hover);
+}
+
 /* ----> FOOTER  <---- */
 footer p {
   display: flex;
