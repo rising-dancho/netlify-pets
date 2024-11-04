@@ -2,4 +2,4 @@
 - hero section ✅
 - pet section  ✅
 - login/logout ✅
-- manage pets  (in progress)
+- manage pets  ❌ (in progress)
