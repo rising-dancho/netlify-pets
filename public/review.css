@@ -159,6 +159,16 @@ p {
 /* ------------------------ */
 /* HELPER CLASSES           */
 /* ------------------------ */
+.pet-card {
+  display: grid;
+  grid-template-columns: 165px 1fr;
+  border-radius: var(--br-card);
+  overflow: hidden;
+  background-color: var(--light-background);
+  border: 1px solid var(--gray-border);
+  box-shadow: var(--box-shadow);
+}
+
 .active {
   text-decoration: underline;
   color: var(--accent-color) !important;
@@ -301,7 +311,7 @@ p {
   display: inline-block;
 }
 
-.small-link:hover{
+.small-link:hover {
   color: var(--gray-text-light-hover);
 }
 
@@ -488,16 +498,6 @@ p {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-32px);
-}
-
-.pets-section .pet-card {
-  display: grid;
-  grid-template-columns: 165px 1fr;
-  border-radius: var(--br-card);
-  overflow: hidden;
-  background-color: var(--light-background);
-  border: 1px solid var(--gray-border);
-  box-shadow: var(--box-shadow);
 }
 
 .pets-section .pet-card h3 {
