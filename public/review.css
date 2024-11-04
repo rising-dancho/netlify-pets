@@ -167,7 +167,6 @@ p {
 
 .active:hover {
   color: var(--accent-color-hover) !important;
-  transform: scale(1.05);
 }
 
 .active:active {
@@ -304,7 +303,6 @@ p {
 
 .small-link:hover {
   color: var(--gray-text-light-hover);
-  transform: scale(1.05);
 }
 
 .small-link:active {
@@ -483,7 +481,6 @@ p {
 
 .pets-section .filter-buttons-wrapper button:hover {
   color: var(--gray-text-heading-hover);
-  transform: scale(1.05);
 }
 
 .pets-section .filter-buttons-wrapper button:active {
