@@ -578,6 +578,29 @@ p {
   transform: scale(0.95);
 }
 
+.still-loading .pet-card-photo,
+.still-loading .pet-details-container {
+  opacity: 0;
+}
+
+.still-loading .pet-card {
+  background-color: var(--gray-text-heading-hover);
+}
+
+@keyframes loading-animation {
+  0% {
+    opacity: 0.1;
+  }
+
+  100% {
+    opacity: 0.4;
+  }
+}
+
+.still-loading {
+  animation: 0.6s loading-animation ease-in-out alternate infinite;
+}
+
 /* ----> FOOTER  <---- */
 footer p {
   display: flex;
