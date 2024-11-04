@@ -1,5 +1,5 @@
 # pet-bestie
 - hero section ✅
 - pet section  ✅
-- login/logout ( in progress)  
-- manage pets  ❌
+- login/logout ✅
+- manage pets  (in progress)
