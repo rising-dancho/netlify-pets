@@ -64,9 +64,10 @@
   --white-text: #f9fdff;
   --black-text: #283f53;
   --gray-text-heading: #9da6ae;
-  --gray-text-heading-hover: hsl(208, 9%, 55%);
+  --gray-text-heading-hover: #828d97;
   --gray-text-p: #626469;
   --gray-text-dimmed: #a2a2a2;
+  --gray-text-light: #999;
 
   --accent-color: #475aff;
   --accent-color-hover: hsl(234, 100%, 54%);
@@ -241,7 +242,6 @@ p {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-
   border: 0px solid #000;
   display: inline-flex;
   justify-content: center;
@@ -288,6 +288,12 @@ p {
 .input-field.admin {
   border: 1px solid rgba(0, 0, 0, 0.9);
   margin: 0 0 var(--spacing-16px) 0;
+}
+
+.small-link {
+  color: var(--gray-text-light);
+  font-size: var(--fs-12);
+  z-index: 99999 !important;
 }
 
 .blue-circle {
