@@ -558,7 +558,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: var(--spacing-8px);
+  gap: var(--spacing-12px);
   width: fit-content;
   text-decoration: none;
   padding: var(--spacing-12px) var(--spacing-32px) !important;
