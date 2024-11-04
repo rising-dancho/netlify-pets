@@ -533,6 +533,19 @@ p {
   order: 2;
 }
 
+/* ----> ADMIN PAGE  <---- */
+.action-btn {
+  text-decoration: none;
+  font-family: inherit;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0 var(--spacing-8px) 0 0;
+  font-size: var(--fs-14);
+  cursor: pointer;
+  color: var(--accent-color);
+}
+
 /* ----> FOOTER  <---- */
 footer p {
   display: flex;
