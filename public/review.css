@@ -304,6 +304,7 @@ p {
 
 .small-link:hover {
   color: var(--gray-text-light-hover);
+  transform: scale(1.05);
 }
 
 .blue-circle {
@@ -552,6 +553,7 @@ footer button#logout {
 
 footer button#logout:hover {
   color: var(--gray-text-dimmed-hover);
+  transform: scale(1.05);
 }
 
 /* /* ------------------------ */
