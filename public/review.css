@@ -513,7 +513,7 @@ p {
 }
 
 .pet-card {
-  display: grid !important;
+  display: grid;
   grid-template-columns: 165px 1fr;
   border-radius: var(--br-card);
   overflow: hidden;
@@ -528,6 +528,17 @@ p {
   justify-content: center;
   padding: var(--spacing-24px);
   order: 2;
+}
+
+/* ----> ADMIN PAGE  <---- */
+.render-pets.list-of-pets {
+  display: grid;
+  grid-template-columns: 165px 1fr;
+  border-radius: var(--br-card);
+  overflow: hidden;
+  background-color: var(--light-background);
+  border: 1px solid var(--gray-border);
+  box-shadow: var(--box-shadow);
 }
 
 /* ----> FOOTER  <---- */
