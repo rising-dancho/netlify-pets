@@ -534,6 +534,12 @@ footer p {
 
 footer button#logout {
   margin-bottom: var(--spacing-48px);
+  font-family: inherit;
+  background-color: transparent;
+  border: none;
+  text-decoration: underline;
+  color: var(--gray-text-dimmed);
+  cursor: pointer;
 }
 
 /* /* ------------------------ */
