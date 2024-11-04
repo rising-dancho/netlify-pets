@@ -274,6 +274,22 @@ p {
   box-shadow: inset 0 0 0 2px var(--light-background);
 }
 
+.input-field {
+  background-color: var(--light-background);
+  border-radius: var(--br-button);
+  font-family: inherit;
+  width: 100%;
+  padding: var(--spacing-12px);
+  font-size: var(--fs-18);
+  border: none;
+  color: var(--black-text);
+}
+
+.input-field.admin {
+  border: 1px solid rgba(0, 0, 0, 0.9);
+  margin: 0 0 var(--spacing-16px) 0;
+}
+
 .blue-circle {
   position: absolute;
   top: -519px;
@@ -307,20 +323,6 @@ p {
   gap: var(--spacing-8px);
   padding: var(--spacing-80px);
   height: 100%;
-}
-
-.input-field-design {
-  background-color: var(--light-background);
-  border-radius: var(--br-button);
-  font-family: var(--font-family);
-}
-
-.input-field-design {
-  width: 100%;
-  padding: 12px;
-  font-size: 18px;
-  border: none;
-  color: var(--black-text);
 }
 
 .center-container {
