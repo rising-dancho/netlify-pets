@@ -67,7 +67,9 @@
   --gray-text-heading-hover: #828d97;
   --gray-text-p: #626469;
   --gray-text-dimmed: #a2a2a2;
+  --gray-text-dimmed-hover: #797979;
   --gray-text-light: #999;
+  --gray-text-light-hover: #727272;
 
   --accent-color: #475aff;
   --accent-color-hover: hsl(234, 100%, 54%);
@@ -297,6 +299,10 @@ p {
   z-index: 3 !important;
   position: relative;
   display: inline-block;
+}
+
+.small-link:hover{
+  color: var(--gray-text-light-hover);
 }
 
 .blue-circle {
@@ -540,6 +546,10 @@ footer button#logout {
   text-decoration: underline;
   color: var(--gray-text-dimmed);
   cursor: pointer;
+}
+
+footer button#logout:hover {
+  color: var(--gray-text-dimmed-hover);
 }
 
 /* /* ------------------------ */
