@@ -485,7 +485,8 @@ p {
   transform: scale(0.95);
 }
 
-.pet-cards-container {
+.pet-cards-container,
+.list-of-pets {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-32px);
@@ -528,17 +529,6 @@ p {
   justify-content: center;
   padding: var(--spacing-24px);
   order: 2;
-}
-
-/* ----> ADMIN PAGE  <---- */
-.render-pets.list-of-pets {
-  display: grid;
-  grid-template-columns: 165px 1fr;
-  border-radius: var(--br-card);
-  overflow: hidden;
-  background-color: var(--light-background);
-  border: 1px solid var(--gray-border);
-  box-shadow: var(--box-shadow);
 }
 
 /* ----> FOOTER  <---- */
@@ -645,7 +635,8 @@ footer button#logout:hover {
     grid-template-columns: repeat(1, 1fr);
   }
 
-  .pet-cards-container {
+  .pet-cards-container,
+  .list-of-pets {
     grid-template-columns: repeat(1, 1fr);
   }
 
