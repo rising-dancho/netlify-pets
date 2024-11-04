@@ -74,6 +74,7 @@
   --accent-color: #475aff;
   --accent-color-hover: hsl(234, 100%, 54%);
   --secondary-color-green: #138213;
+  --secondary-color-green-hover: hsl(120, 74%, 26%);
 
   --circle-color-var1: #6079ff;
   --circle-color-var2: #d660ff;
@@ -554,18 +555,23 @@ p {
 }
 
 .add-pet-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-8px);
+  width: fit-content;
   text-decoration: none;
-  display: inline-block;
   padding: var(--spacing-12px) var(--spacing-32px) !important;
   margin: 0 0 var(--spacing-32px) 0;
   font-size: var(--fs-20);
-  border-radius: var(--br-button);
+  border-radius: var(--br-card);
   color: var(--white-text);
   background-color: var(--secondary-color-green);
+  font-family: inherit;
 }
 
 .add-pet-btn:hover {
-  background-color: var(--secondary-color-green);
+  background-color: var(--secondary-color-green-hover);
 }
 
 .add-pet-btn:active {
