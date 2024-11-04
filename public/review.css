@@ -554,9 +554,6 @@ p {
   color: var(--accent-color-hover);
 }
 
-.action-btn:active {
-  transform: scale(0.95) !important;
-}
 
 .add-pet-btn {
   display: flex;
