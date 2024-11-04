@@ -307,6 +307,10 @@ p {
   transform: scale(1.05);
 }
 
+.small-link:active {
+  transform: scale(0.95);
+}
+
 .blue-circle {
   position: absolute;
   top: -519px;
@@ -553,7 +557,10 @@ footer button#logout {
 
 footer button#logout:hover {
   color: var(--gray-text-dimmed-hover);
-  transform: scale(1.05);
+}
+
+footer button#logout:active {
+  transform: scale(0.95);
 }
 
 /* /* ------------------------ */
