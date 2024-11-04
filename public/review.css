@@ -73,6 +73,8 @@
 
   --accent-color: #475aff;
   --accent-color-hover: hsl(234, 100%, 54%);
+  --secondary-color-green: #138213;
+
   --circle-color-var1: #6079ff;
   --circle-color-var2: #d660ff;
 
@@ -549,6 +551,25 @@ p {
 .action-btn:hover {
   text-decoration: underline;
   color: var(--accent-color-hover);
+}
+
+.add-pet-btn {
+  text-decoration: none;
+  display: inline-block;
+  padding: var(--spacing-12px) var(--spacing-32px) !important;
+  margin: 0 0 var(--spacing-32px) 0;
+  font-size: var(--fs-20);
+  border-radius: var(--br-button);
+  color: var(--white-text);
+  background-color: var(--secondary-color-green);
+}
+
+.add-pet-btn:hover {
+  background-color: var(--secondary-color-green);
+}
+
+.add-pet-btn:active {
+  transform: scale(0.95);
 }
 
 /* ----> FOOTER  <---- */
