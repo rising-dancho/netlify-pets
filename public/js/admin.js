@@ -1,11 +1,11 @@
 async function start() {
-  const cookiesPromise = await fetch('/.netlify/functions/adminDashboard');
-  const cookieData = await cookiesPromise.json();
+  const ourPromise = await fetch('/.netlify/functions/adminDashboard');
+  const ourData = await ourPromise.json();
   console.log('handler invoked!');
 
-  if (cookieData.success) {
+  if (ourData.success) {
     // doing something interesting, show the pet management UI
-    console.log(cookieData);
+    console.log(ourData);
     const pets_container = document.querySelector('#render-pets');
 
     // adding the pet cards inside the pets container
