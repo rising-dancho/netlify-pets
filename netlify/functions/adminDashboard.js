@@ -38,6 +38,7 @@ const handler = async (event) => {
 
 function generateHTML(pets) {
   let ourHTML = `<div class="list-of-pets">`;
+
   ourHTML += pets
     .map((pet) => {
       return `<div class="pet-card">
