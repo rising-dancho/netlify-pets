@@ -293,7 +293,10 @@ p {
 .small-link {
   color: var(--gray-text-light);
   font-size: var(--fs-12);
-  z-index: 99999 !important;
+  /* these three lines helps when an h1 is overlapping a link */
+  z-index: 3 !important;
+  position: relative;
+  display: inline-block;
 }
 
 .blue-circle {
@@ -577,6 +580,7 @@ footer button#logout {
 
   h2 {
     font-size: var(--fs-62);
+    pointer-events: none;
   }
 
   .pets-section .filter-container p,
