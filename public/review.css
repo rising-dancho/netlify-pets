@@ -297,7 +297,7 @@ p {
 
 textarea.input-field {
   height: 200px;
-  resize: none;
+  resize: vertical;
 }
 
 .small-link {
