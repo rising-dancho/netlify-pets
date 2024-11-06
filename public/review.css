@@ -295,6 +295,11 @@ p {
   margin: 0 0 var(--spacing-16px) 0;
 }
 
+textarea.input-field {
+  height: 150px;
+  resize: none;
+}
+
 .small-link {
   color: var(--gray-text-light);
   font-size: var(--fs-12);
