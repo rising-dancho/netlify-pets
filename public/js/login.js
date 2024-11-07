@@ -9,7 +9,7 @@ async function handleSubmit(e) {
 
   const ourPromise = await fetch('/.netlify/functions/loginAttempt', {
     method: 'POST',
-    headers: {},
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       username: username_txtbox.value,
       password: password_txtbox.value,

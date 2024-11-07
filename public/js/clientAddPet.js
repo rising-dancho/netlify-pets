@@ -1,6 +1,6 @@
 document
   .querySelector('#add-new-pet-form')
-  .addEventListener('submit', function (e) {
+  .addEventListener('submit', async function (e) {
     e.preventDefault();
 
     const pet = {
@@ -10,5 +10,12 @@ document
       description: document.querySelector('#description').value,
     };
 
-    console.log(pet);
+    const ourPromise = await fetch('/.netlify/functions/addPet', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(pet),
+    });
+
+    const theResponse = await ourPromise.json();
+    window.location = '/admin';
   });
