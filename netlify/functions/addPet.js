@@ -6,8 +6,11 @@ const handler = async (event) => {
 
   // isAdmin is a separate reusable function
   if (isAdmin(event)) {
+    // making a connection to the mongodb database
+    const client = await getDbClient();
     // actually save into database
-    
+    const pets = await client.db().collection('pets').insertOne(body);
+    // client.close();
 
     return {
       statusCode: 200,
