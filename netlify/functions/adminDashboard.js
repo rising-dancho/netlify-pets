@@ -1,15 +1,14 @@
-const { MongoClient } = require('mongodb');
+const getDbClient = require('../../our-library/getDbClient');
 const isAdmin = require('../../our-library/isAdmin');
 
-const cookie = require('cookie');
+// const cookie = require('cookie');
 
 const handler = async (event) => {
   // console.log(event.headers.cookie);
 
   if (isAdmin(event)) {
     // making a connection to the mongodb database
-    const client = new MongoClient(process.env.CONNECTION_STRING);
-    await client.connect();
+    const client = await getDbClient();
 
     // getting the pets data from the db
     const pets = await client.db().collection('pets').find().toArray();

@@ -7,6 +7,8 @@ const handler = async (event) => {
   // isAdmin is a separate reusable function
   if (isAdmin(event)) {
     // actually save into database
+    
+
     return {
       statusCode: 200,
       headers: {
