@@ -17,5 +17,8 @@ document
     });
 
     const theResponse = await ourPromise.json();
-    window.location = '/admin';
+
+    if (theResponse.success) {
+      window.location = '/admin';
+    }
   });
