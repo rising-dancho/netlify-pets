@@ -1,3 +1,4 @@
+const getDbClient = require('../../our-library/getDbClient');
 const isAdmin = require('../../our-library/isAdmin');
 
 const handler = async (event) => {
