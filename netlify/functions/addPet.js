@@ -1,14 +1,22 @@
+const sanitizeHTML = require('sanitize-html');
 const getDbClient = require('../../our-library/getDbClient');
 const isAdmin = require('../../our-library/isAdmin');
+
+function cleanUp(x) {
+  return sanitizeHTML(x, {
+    allowTags: [],
+    allowedAttributes: {},
+  });
+}
 
 const handler = async (event) => {
   const body = JSON.parse(event.body);
   console.log(body);
 
   let pet = {
-    name: body.name,
-    species: body.species,
-    description: body.description,
+    name: cleanUp(body.name),
+    species: cleanUp(body.species),
+    description: cleanUp(body.description),
     birthYear: new Date().getFullYear(),
   }; // add current year user didn't type in a birth year
 
