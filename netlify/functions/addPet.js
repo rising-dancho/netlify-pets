@@ -9,7 +9,7 @@ const handler = async (event) => {
     name: body.name,
     species: body.species,
     description: body.description,
-    birthYear: new Data().getFullYear(),
+    birthYear: new Date().getFullYear(),
   }; // add current year user didn't type in a birth year
 
   // checking for the birthYear's validity
@@ -17,8 +17,8 @@ const handler = async (event) => {
     pet.birthYear = body.birthYear;
   }
 
-  if(pet.species !== "Cat" && pet.species !== "Dog"){
-    pet.species = "Dog"
+  if (pet.species !== 'Cat' && pet.species !== 'Dog') {
+    pet.species = 'Dog';
   }
 
   // isAdmin is a separate reusable function
