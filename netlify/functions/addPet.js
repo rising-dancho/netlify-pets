@@ -1,10 +1,10 @@
-const sanitizeHTML = require('sanitize-html');
+const sanitizeHtml = require('sanitize-html');
 const getDbClient = require('../../our-library/getDbClient');
 const isAdmin = require('../../our-library/isAdmin');
 
 function cleanUp(x) {
-  return sanitizeHTML(x, {
-    allowTags: [],
+  return sanitizeHtml(x, {
+    allowedTags: [],
     allowedAttributes: {},
   });
 }
