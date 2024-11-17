@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Adoption || Reviewing CSS Fundamentals</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../../review.css">
+  <script src="../../js/logout.js" defer></script>
+  <script src="../../js/clientEditPet.js" defer></script>
+</head>
+
+<body>
+
+  <main class="middle">
+    <div class="pets-section max-width padding-lg center">
+      <a class="small-link" href="/admin">&laquo; Back to Admin Dashboard</a>
+      <h2>Edit Existing Pet</h2>
+      <form id="add-new-pet-form">
+        <input autofocus autocomplete="off" class="input-field admin" type="text" id="name" placeholder="Pet name">
+        <input type="number" id="birthYear" class="input-field admin" placeholder="Year born (e.g. 2019)">
+        <select id="species" class="input-field admin">
+          <option>Dog</option>
+          <option>Cat</option>
+        </select>
+        <textarea class="input-field admin" id="description" placeholder="Description..."></textarea>
+        <button id="submit-btn" class="btn btn-primary">Save Changes </button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="bottom">
+    <div class="footer-section max-width padding-sm center">
+      <p class="logout-container"><button id="logout">Logout</button></p>
+      <p id="copyright"> </p>
+    </div>
+  </footer>
+
+</body>
+<script>
+  // auto update year:
+  const current_year = new Date().getFullYear();
+  const footer_text = `&copy; ${current_year} Faux Adoption Center. All rights reserved.`;
+
+  document.getElementById('copyright').innerHTML = footer_text;
+</script>
+
+</html>
