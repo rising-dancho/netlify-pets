@@ -44,7 +44,7 @@ function generateHTML(pets) {
             <h3>${pet.name}</h3>
             <p class="pet-description">${pet.description}</p>
             <div class="action-buttons-container">
-              <a  class="action-btn" href="#">Edit</a>
+              <a  class="action-btn" href="/admin/edit-pet?id=${pet._id}">Edit</a>
               <button class="action-btn">Delete</button>
             </div>
           </div>
