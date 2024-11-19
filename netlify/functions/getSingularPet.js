@@ -1,7 +1,7 @@
+const escape = require('escape-html');
 const getDbClient = require('../../our-library/getDbClient');
 const { ObjectId } = require('mongodb');
 const isAdmin = require('../../our-library/isAdmin');
-const escape = require('escape-html');
 
 // const cookie = require('cookie');
 
