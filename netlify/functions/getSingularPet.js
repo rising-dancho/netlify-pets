@@ -37,29 +37,4 @@ const handler = async (event) => {
   };
 };
 
-function generateHTML(pets) {
-  let ourHTML = `<div class="list-of-pets">`;
-
-  ourHTML += pets
-    .map((pet) => {
-      return `<div class="pet-card">
-          <div class="pet-details-container">
-            <h3>${pet.name}</h3>
-            <p class="pet-description">${pet.description}</p>
-            <div class="action-buttons-container">
-              <a  class="action-btn" href="/admin/edit-pet?id=${pet._id}">Edit</a>
-              <button class="action-btn">Delete</button>
-            </div>
-          </div>
-          <div class="pet-card-photo">
-            <img src="../images/fallback.jpg" alt="a ${pet.species} named ${pet.name}">
-          </div>
-        </div>`;
-    })
-    .join('');
-  ourHTML += `</div>`;
-
-  return ourHTML;
-}
-
 module.exports = { handler };
