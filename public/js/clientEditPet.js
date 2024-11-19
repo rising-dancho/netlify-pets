@@ -10,8 +10,11 @@ async function getEditPet() {
   });
 
   const pet = await ourPromise.json();
-  alert(pet);
+  // alert(pet);
   console.log(pet);
+  if (!pet.name) {
+    window.location = '/admin';
+  }
 }
 
 getEditPet();
