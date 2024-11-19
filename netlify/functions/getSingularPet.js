@@ -32,12 +32,6 @@ const handler = async (event) => {
       .findOne({ _id: new ObjectId(body.id) });
     client.close();
 
-    // sanitizing data before sending it to the database
-    pet.name = escape(pet.name);
-    pet.birthYear = escape(pet.birthYear);
-    pet.species = escape(species);
-    pet.description = escape(pet.description);
-
     return {
       statusCode: 200,
       headers: {
