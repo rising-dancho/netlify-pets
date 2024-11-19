@@ -16,6 +16,9 @@ async function getEditPet() {
     window.location = '/admin';
   }
 
+
+  pet.name
+
   // populating the input field values with the values from the db
   document.querySelector('#name').value = pet.name;
   document.querySelector('#birthYear').value = pet.birthYear;
@@ -24,3 +27,10 @@ async function getEditPet() {
 }
 
 getEditPet();
+
+// FIX: If and when select tag is not populating properly, do this:
+// The issue with setting the value of a <select> element is often due to one of these reasons:
+
+// Value mismatch: The pet.species value you're trying to set doesn't match any of the value attributes of the <option> elements in the <select>. If <option> elements don't explicitly define a value attribute, their text content will be used as their value by default.
+
+// Incorrect timing: The document.querySelector('#species').value = pet.species; statement might be executed before the <select> element or its options are fully available in the DOM.
