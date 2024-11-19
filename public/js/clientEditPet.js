@@ -15,6 +15,12 @@ async function getEditPet() {
   if (!pet.name) {
     window.location = '/admin';
   }
+
+  // populating the input field values with the values from the db
+  document.querySelector('#name').value = pet.name;
+  document.querySelector('#birthYear').value = pet.birthYear;
+  document.querySelector('#species').value = pet.species;
+  document.querySelector('#description').value = pet.description;
 }
 
 getEditPet();
