@@ -8,10 +8,22 @@ const handler = async (event) => {
   // console.log(event.headers.cookie);
 
   if (isAdmin(event)) {
+    const body = JSON.parse(event.body);
+
+    // just returns an empty string if provided with invalid/bogus id from the params
+    if (!ObjectId.isValid(body.id)) {
+      return {
+        statusCode: 200,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({}),
+      };
+    }
+
     // making a connection to the mongodb database
     const client = await getDbClient();
 
-    const body = JSON.parse(event.body);
     // getting the pets data from the db
     const pet = await client
       .db()
@@ -24,7 +36,7 @@ const handler = async (event) => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ success: true, pet: pet }),
+      body: JSON.stringify(pet),
     };
   }
 
