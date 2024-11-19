@@ -55,7 +55,7 @@ document
 
     const theResponse = await ourPromise.json();
 
-    if (theResponse.success) {
-      window.location = '/admin';
-    }
+    // if (theResponse.success) {
+    //   window.location = '/admin';
+    // }
   });
