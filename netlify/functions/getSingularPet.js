@@ -29,8 +29,13 @@ const handler = async (event) => {
     const pet = await client
       .db()
       .collection('pets')
-      .findOne({ _id: new ObjectId(body.id) });
+      .findOne({ _id: ObjectId.createFromTime(body.id) });
     client.close();
+
+    pet.name = escape(pet.name);
+    pet.birthYear = escape(pet.birthYear);
+    pet.species = escape(pet.species);
+    pet.description = escape(pet.description);
 
     return {
       statusCode: 200,
