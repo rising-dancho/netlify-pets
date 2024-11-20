@@ -29,7 +29,7 @@ const handler = async (event) => {
     const pet = await client
       .db()
       .collection('pets')
-      .findOne({ _id: new ObjectId(body.id) });
+      .findOne({ _id: ObjectId.createFromHexString(body.id) });
     client.close();
 
     if (!pet) {
