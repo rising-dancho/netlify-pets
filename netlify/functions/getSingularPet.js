@@ -32,10 +32,10 @@ const handler = async (event) => {
       .findOne({ _id: ObjectId.createFromTime(body.id) });
     client.close();
 
-    pet.name = escape(pet.name);
-    pet.birthYear = escape(pet.birthYear);
-    pet.species = escape(pet.species);
-    pet.description = escape(pet.description);
+    // pet.name = escape(pet.name);
+    // pet.birthYear = escape(pet.birthYear);
+    // pet.species = escape(pet.species);
+    // pet.description = escape(pet.description);
 
     return {
       statusCode: 200,
