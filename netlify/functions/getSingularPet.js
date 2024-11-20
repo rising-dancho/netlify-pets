@@ -29,7 +29,7 @@ const handler = async (event) => {
     const pet = await client
       .db()
       .collection('pets')
-      .findOne({ _id: ObjectId.createFromTime(body.id) });
+      .findOne({ _id: new ObjectId(body.id) });
     client.close();
 
     // pet.name = escape(pet.name);
