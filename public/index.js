@@ -135,7 +135,7 @@ function handleButtonClick(e) {
 
   // loop through all the pet-cards
   document.querySelectorAll('.pet-card').forEach((el) => {
-    // console.log(currentFilter, el.dataset.species);
+    console.log(currentFilter, el.dataset.species);
     if (currentFilter === el.dataset.species || currentFilter === 'all') {
       el.style.display = 'grid';
     } else {
