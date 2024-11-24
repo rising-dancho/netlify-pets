@@ -55,11 +55,11 @@ const handler = async (event) => {
     // making a connection to the mongodb database
     const client = await getDbClient();
     // actually save into database
-    const pets = await client
+    await client
       .db()
       .collection('pets')
       .findOneAndUpdate({ _id: new ObjectId(body.id) }, { $set: pet });
-    // client.close();
+    client.close();
 
     return {
       statusCode: 200,

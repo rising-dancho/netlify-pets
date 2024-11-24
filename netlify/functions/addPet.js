@@ -43,8 +43,8 @@ const handler = async (event) => {
     // making a connection to the mongodb database
     const client = await getDbClient();
     // actually save into database
-    const pets = await client.db().collection('pets').insertOne(pet);
-    // client.close();
+    await client.db().collection('pets').insertOne(pet);
+    client.close();
 
     return {
       statusCode: 200,
