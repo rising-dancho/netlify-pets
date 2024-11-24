@@ -13,6 +13,15 @@ const handler = async (event) => {
   const body = JSON.parse(event.body);
   console.log(body);
 
+  // malicious entry injection prevention
+  if (typeof body.name != 'string') {
+    body.name = '';
+  }
+
+  if (typeof body.description != 'string') {
+    body.description = '';
+  }
+
   let pet = {
     name: cleanUp(body.name),
     species: cleanUp(body.species),
