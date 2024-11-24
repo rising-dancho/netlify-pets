@@ -62,7 +62,6 @@ const handler = async (event) => {
   }
 
   // no permission
-
   return {
     statusCode: 200,
     headers: {
