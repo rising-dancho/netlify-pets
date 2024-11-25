@@ -16,3 +16,7 @@ async function start() {
 }
 
 start();
+
+async function handleDelete(id, el) {
+  el.closest('.pet-card').remove();
+}
