@@ -1,7 +1,7 @@
 async function start() {
   const ourPromise = await fetch('/.netlify/functions/adminDashboard');
   const ourData = await ourPromise.json();
-  console.log('handler invoked!');
+  // console.log('handler invoked!');
 
   if (ourData.success) {
     // doing something interesting, show the pet management UI
@@ -17,6 +17,12 @@ async function start() {
 
 start();
 
-async function handleDelete(id, el) {
+function handleDelete(id, el) {
   el.closest('.pet-card').remove();
+
+  fetch('/.netlify/functions/deletePet', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ id: id }),
+  });
 }
