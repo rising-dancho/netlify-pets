@@ -42,6 +42,11 @@ document
       description: document.querySelector('#description').value,
     };
 
+    // add loading animation
+    document
+      .querySelector('#edit-pet-form')
+      .classList.add('form-is-loading');
+
     const ourPromise = await fetch('/.netlify/functions/saveChanges', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
