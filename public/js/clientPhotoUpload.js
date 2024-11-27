@@ -1,5 +1,6 @@
 let serverSignature;
 let serverTimestamp;
+const cloudname = 'dggewe2of';
 
 async function getSignature() {
   const signaturePromise = await fetch('/.netlify/functions/getSignature');
@@ -32,4 +33,11 @@ document
         },
       }
     );
+
+    console.log(cloudinaryResponse.data);
+    console.log(cloudinaryResponse.data.public_id);
+
+    document.querySelector(
+      '#photo-preview'
+    ).innerHTML = `<img src="https://res.cloudinary.com/dggewe2of/image/upload/w_190,h_190,c_fill/${cloudinaryResponse.data.public_id}.jpg"/>`;
   });
