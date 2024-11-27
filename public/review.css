@@ -290,7 +290,8 @@ p {
   color: var(--black-text);
 }
 
-.input-field.admin {
+.input-field.admin,
+.file-chooser {
   border: 1px solid rgba(0, 0, 0, 0.9);
   margin: 0 0 var(--spacing-16px) 0;
 }
