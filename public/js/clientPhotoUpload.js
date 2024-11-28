@@ -1,6 +1,7 @@
 let serverSignature;
 let serverTimestamp;
 let cloudinaryReturnedObject;
+let isFormLocked = false;
 const cloudname = 'dggewe2of';
 
 async function getSignature() {
@@ -16,6 +17,9 @@ getSignature();
 document
   .querySelector('#file-field')
   .addEventListener('change', async function () {
+    isFormLocked = true;
+    document.querySelector('#submit-btn').style.opacity = '.1';
+
     // create a blob of data
     const data = new FormData();
     data.append('file', document.querySelector('#file-field').files[0]); // .files[0]: only the first file user uploaded
@@ -44,4 +48,7 @@ document
     document.querySelector(
       '#photo-preview'
     ).innerHTML = `<img src="https://res.cloudinary.com/${cloudname}/image/upload/w_190,h_190,c_fill/${cloudinaryResponse.data.public_id}.jpg"/>`;
+
+    isFormLocked = false;
+    document.querySelector('#submit-btn').style.opacity = '1';
   });
