@@ -1,7 +1,7 @@
 const getDbClient = require('../../our-library/getDbClient');
 const isAdmin = require('../../our-library/isAdmin');
-
-// const cookie = require('cookie');
+const escape = require('escape-html');
+const cloudname = 'dggewe2of';
 
 const handler = async (event) => {
   // console.log(event.headers.cookie);
@@ -39,17 +39,29 @@ function generateHTML(pets) {
 
   ourHTML += pets
     .map((pet) => {
+      if (!pet.photo) {
+        pet.photo = '/images/fallback.jpg';
+      } else {
+        pet.photo = `https://res.cloudinary.com/${cloudname}/image/upload/w_330,h_392,c_fill/${pet.photo}.jpg`;
+      }
+
       return `<div class="pet-card">
           <div class="pet-details-container">
-            <h3>${pet.name}</h3>
-            <p class="pet-description">${pet.description}</p>
+            <h3>${escape(pet.name)}</h3>
+            <p class="pet-description">${escape(pet.description)}</p>
             <div class="action-buttons-container">
-              <a  class="action-btn" href="/admin/edit-pet?id=${pet._id}">Edit</a>
-              <button onClick="handleDelete('${pet._id}', this)" class="action-btn">Delete</button>
+              <a  class="action-btn" href="/admin/edit-pet?id=${
+                pet._id
+              }">Edit</a>
+              <button onClick="handleDelete('${
+                pet._id
+              }', this)" class="action-btn">Delete</button>
             </div>
           </div>
           <div class="pet-card-photo">
-            <img src="../images/fallback.jpg" alt="a ${pet.species} named ${pet.name}">
+            <img src="${escape(pet.photo)}" alt="a ${escape(
+        pet.species
+      )} named ${escape(pet.name)}">
           </div>
         </div>`;
     })

@@ -4,6 +4,8 @@ const weather_condition = document.querySelector('#weather-condition');
 const icon = document.querySelector('#weather-icon');
 const if_error = document.querySelector('#if-error');
 
+const cloudname = 'dggewe2of';
+
 async function weather() {
   try {
     const weatherPromise = await fetch(
@@ -87,7 +89,11 @@ async function petsArea() {
     clone.querySelector('.pet-description').textContent = pet.description;
     clone.querySelector('.pet-age').textContent = calculateAge(pet.birthYear);
 
-    if (!pet.photo) pet.photo = './images/fallback.jpg';
+    if (!pet.photo) {
+      pet.photo = '/images/fallback.jpg';
+    } else {
+      pet.photo = `https://res.cloudinary.com/${cloudname}/image/upload/w_330,h_392,c_fill/${pet.photo}.jpg`;
+    }
 
     clone.querySelector('.pet-card-photo img').src = pet.photo;
     clone.querySelector(

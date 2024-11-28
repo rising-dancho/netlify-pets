@@ -3,6 +3,13 @@ document
   .addEventListener('submit', async function (e) {
     e.preventDefault();
 
+    // prevent double, or triple submission
+    if (isFormLocked) {
+      return null;
+    }
+
+    isFormLocked = true;
+
     const pet = {
       name: document.querySelector('#name').value,
       birthYear: document.querySelector('#birthYear').value,
@@ -10,8 +17,16 @@ document
       description: document.querySelector('#description').value,
     };
 
+    if (cloudinaryReturnedObject) {
+      pet.public_id = cloudinaryReturnedObject.public_id;
+      pet.version = cloudinaryReturnedObject.version;
+      pet.signature = cloudinaryReturnedObject.signature;
+    }
+
     // add loading animation
-    document.querySelector('#add-new-pet-form').classList.add('form-is-loading');
+    document
+      .querySelector('#add-new-pet-form')
+      .classList.add('form-is-loading');
 
     const ourPromise = await fetch('/.netlify/functions/addPet', {
       method: 'POST',

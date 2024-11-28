@@ -48,6 +48,7 @@ const handler = async (event) => {
       birthYear: escape(pet.birthYear || ''),
       species: escape(pet.species || ''),
       description: escape(pet.description || ''),
+      photo: escape(pet.photo || ''),
     };
 
     return {
