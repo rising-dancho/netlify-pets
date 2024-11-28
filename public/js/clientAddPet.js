@@ -3,6 +3,7 @@ document
   .addEventListener('submit', async function (e) {
     e.preventDefault();
 
+    // prevent double, or triple submission
     if (isFormLocked) {
       return null;
     }

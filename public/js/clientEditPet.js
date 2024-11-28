@@ -40,6 +40,13 @@ document
   .addEventListener('submit', async function (e) {
     e.preventDefault();
 
+    // prevent double, or triple submission
+    if (isFormLocked) {
+      return null;
+    }
+
+    isFormLocked = true;
+
     const pet = {
       id: id,
       name: document.querySelector('#name').value,
@@ -47,6 +54,12 @@ document
       species: document.querySelector('#species').value,
       description: document.querySelector('#description').value,
     };
+
+    if (cloudinaryReturnedObject) {
+      pet.public_id = cloudinaryReturnedObject.public_id;
+      pet.version = cloudinaryReturnedObject.version;
+      pet.signature = cloudinaryReturnedObject.signature;
+    }
 
     // add loading animation
     document.querySelector('#edit-pet-form').classList.add('form-is-loading');
