@@ -1,5 +1,6 @@
 let serverSignature;
 let serverTimestamp;
+let cloudinaryReturnedObject;
 const cloudname = 'dggewe2of';
 
 async function getSignature() {
@@ -24,7 +25,7 @@ document
 
     // send to cloudinary
     const cloudinaryResponse = await axios.post(
-      `https://api.cloudinary.com/v1_1/dggewe2of/auto/upload`,
+      `https://api.cloudinary.com/v1_1/${cloudname}/auto/upload`,
       data,
       {
         headers: { 'Content-Type': 'multipart/form-data' },
@@ -35,9 +36,12 @@ document
     );
 
     console.log(cloudinaryResponse.data);
+    cloudinaryReturnedObject = cloudinaryResponse.data;
+
+    // getting the public id of the image
     console.log(cloudinaryResponse.data.public_id);
 
     document.querySelector(
       '#photo-preview'
-    ).innerHTML = `<img src="https://res.cloudinary.com/dggewe2of/image/upload/w_190,h_190,c_fill/${cloudinaryResponse.data.public_id}.jpg"/>`;
+    ).innerHTML = `<img src="https://res.cloudinary.com/${cloudname}/image/upload/w_190,h_190,c_fill/${cloudinaryResponse.data.public_id}.jpg"/>`;
   });

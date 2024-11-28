@@ -10,8 +10,16 @@ document
       description: document.querySelector('#description').value,
     };
 
+    if (cloudinaryReturnedObject) {
+      pet.public_id = cloudinaryReturnedObject.public_id;
+      pet.version = cloudinaryReturnedObject.version;
+      pet.signature = cloudinaryReturnedObject.signature;
+    }
+
     // add loading animation
-    document.querySelector('#add-new-pet-form').classList.add('form-is-loading');
+    document
+      .querySelector('#add-new-pet-form')
+      .classList.add('form-is-loading');
 
     const ourPromise = await fetch('/.netlify/functions/addPet', {
       method: 'POST',
