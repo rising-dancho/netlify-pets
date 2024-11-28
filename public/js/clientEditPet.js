@@ -22,6 +22,12 @@ async function getEditPet() {
   document.querySelector('#species').value = pet.species;
   document.querySelector('#description').value = pet.description;
 
+  if (pet.photo) {
+    document.querySelector(
+      '#photo-preview'
+    ).innerHTML = `<img src="https://res.cloudinary.com/${cloudname}/image/upload/w_190,h_190,c_fill/${pet.photo}.jpg"/>`;
+  }
+
   // remove loading animation
   document.querySelector('#edit-pet-form').classList.remove('form-is-loading');
   document.querySelector('#name').focus;
@@ -43,9 +49,7 @@ document
     };
 
     // add loading animation
-    document
-      .querySelector('#edit-pet-form')
-      .classList.add('form-is-loading');
+    document.querySelector('#edit-pet-form').classList.add('form-is-loading');
 
     const ourPromise = await fetch('/.netlify/functions/saveChanges', {
       method: 'POST',
