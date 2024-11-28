@@ -3,6 +3,8 @@ const getDbClient = require('../../our-library/getDbClient');
 const { ObjectId } = require('mongodb');
 const isAdmin = require('../../our-library/isAdmin');
 
+// const cookie = require('cookie');
+
 const handler = async (event) => {
   // console.log(event.headers.cookie);
 
@@ -30,13 +32,22 @@ const handler = async (event) => {
       .findOne({ _id: ObjectId.createFromHexString(body.id) });
     client.close();
 
+    if (!pet) {
+      return {
+        statusCode: 404,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ success: false, message: 'Pet not found' }),
+      };
+    }
+
     // Escape the fields to avoid injection risks
     const sanitizedPet = {
       name: escape(pet.name || ''),
       birthYear: escape(pet.birthYear || ''),
       species: escape(pet.species || ''),
       description: escape(pet.description || ''),
-      description: escape(pet.photo || ''),
     };
 
     return {
