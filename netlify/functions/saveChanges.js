@@ -3,6 +3,13 @@ const sanitizeHtml = require('sanitize-html');
 const getDbClient = require('../../our-library/getDbClient');
 const isAdmin = require('../../our-library/isAdmin');
 
+const cloudinaryConfig = cloudinary.config({
+  cloud_name: 'dggewe2of',
+  api_key: '769445293545881',
+  api_secret: process.env.CLOUDINARYSECRET,
+  secure: true,
+});
+
 function cleanUp(x) {
   return sanitizeHtml(x, {
     allowedTags: [],
@@ -37,6 +44,14 @@ const handler = async (event) => {
 
   if (pet.species !== 'Cat' && pet.species !== 'Dog') {
     pet.species = 'Dog';
+  }
+
+  const expectedSignature = cloudinary.utils.api_sign_request(
+    { public_id: body.public_id, version: body.version },
+    cloudinaryConfig.api_secret
+  );
+  if (expectedSignature === body.signature) {
+    pet.photo = body.public_id;
   }
 
   // isAdmin is a separate reusable function

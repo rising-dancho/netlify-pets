@@ -10,8 +10,8 @@ async function getEditPet() {
   });
 
   const pet = await ourPromise.json();
-  // alert(pet);
   console.log(pet);
+  console.log('pet triggered!');
   if (!pet.name) {
     window.location = '/admin';
   }
@@ -21,6 +21,13 @@ async function getEditPet() {
   document.querySelector('#birthYear').value = pet.birthYear;
   document.querySelector('#species').value = pet.species;
   document.querySelector('#description').value = pet.description;
+
+  if (pet.photo) {
+    console.log('pet.photo triggered!');
+    document.querySelector(
+      '#photo-preview'
+    ).innerHTML = `<img src="https://res.cloudinary.com/dggewe2of/image/upload/w_190,h_190,c_fill/${pet.photo}.jpg"/>`;
+  }
 
   // remove loading animation
   document.querySelector('#edit-pet-form').classList.remove('form-is-loading');
@@ -43,9 +50,7 @@ document
     };
 
     // add loading animation
-    document
-      .querySelector('#edit-pet-form')
-      .classList.add('form-is-loading');
+    document.querySelector('#edit-pet-form').classList.add('form-is-loading');
 
     const ourPromise = await fetch('/.netlify/functions/saveChanges', {
       method: 'POST',
