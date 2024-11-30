@@ -4,4 +4,4 @@
 - login/logout ✅
 - add pets  ✅ 
 - edit pets  ✅
-- image upload  ❌ (in progress)
+- image upload  ✅
